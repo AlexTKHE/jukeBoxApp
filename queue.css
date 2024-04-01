@@ -3,17 +3,19 @@
     margin: 0;
     padding: 0;
     font-family: 'Kumbh Sans', sans-serif;
+    /* background: #141414; */
 }
 
 body {
     background-color: #131313;
 }
 
-.navbar {
+
+.navbar { 
     background: #131313;
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: centerj;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
@@ -223,10 +225,109 @@ body {
     }
 }
 
+.queue-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #141414;
+    border-radius: 5px;
+    box-shadow: rgba(21, 18, 18, 0.25) 0px 13px 27px -5px,
+    rgba(72, 66, 66, 0.3) 0px 8px 16px -8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-/* Hero Section */
-.main {
-    background-color: #131313;
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.queue__btn {
+    font-size: 1.5rem;
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.queue__btn p {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+}
+
+.queue__btn:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #4837ff;
+    transition: all 0.35s;
+    border-radius: 4px;
+}
+
+.queue__btn:hover:after {
+    width: 100%;
+}
+
+#songInput {
+    margin-top: 5px;
+    width: 20rem;
+    font-size: 1rem;
+    background-image: linear-gradient(to top, #5f7fff 0%, #5facff 100%);
+    border: none;
+    color: #fff;
+    text-align: center;
+    outline: none;
+}
+
+#songInput::placeholder {
+    color:#131313
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.queue__item {
+    width: 20rem;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    color: #fff;
+    height: 4rem;
+    font-size: 1rem;
+    overflow: hidden;
+}
+.queue__item:nth-child(even) {
+    background-color: #1E1E1E;
+}
+.queue__item:nth-child(odd) {
+    background-color: #282828;
+}
+.queue__item:first-child {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+.queue__item:last-child {
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 
 .main__container {
@@ -243,9 +344,54 @@ body {
     padding: 0 50px;
 }
 
-.main__content h1 {
-    font-size: 4rem;
-    background-color: #ff8177;
+.personal__info {
+    
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    /* padding-left: 40px;
+    padding-right: 40px; */
+    /* background-color: #111010; */
+    border-radius: 5px;
+    /* box-shadow: rgba(21, 18, 18, 0.25) 0px 13px 27px -5px,
+    rgba(72, 66, 66, 0.3) 0px 8px 16px -8px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personalMessage {
+    background-color: #131313;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+    /* outline: 2rem solid #111010; */
+    box-shadow: rgba(255, 8, 68, 0.15) 0px 5px 8px;
+
+    color: #ff0844;
+    
+    height: 7.5rem;
+    width: 25rem;
+}
+
+.personalTokens {
+    text-align: center;
+    background-color: #131313;
+    margin: 50px auto;
+    padding: 20px;
+    /* background-color: #fff; */
+    /* outline: 2rem solid #111010; */
+    border-radius: 5px;
+    box-shadow: rgba(255, 8, 68, 0.15) 0px 5px 8px;
+    color: red;
+    height: 11.5rem;
+    width: 25rem;
+}
+
+.personalMessage h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    background-color: #ff0844;
     background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
     background-size: 100%;
     -webkit-background-clip: text;
@@ -254,9 +400,9 @@ body {
     -moz-text-fill-color: transparent;
 }
 
-.main__content h2 {
-    font-size: 4rem;
-    background-color: #ff8177;
+.personalMessage p {
+    font-size: 1.5rem;
+    background-color: #4837ff;
     background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
     background-size: 100%;
     -webkit-background-clip: text;
@@ -265,112 +411,14 @@ body {
     -moz-text-fill-color: transparent; 
 }
 
-.main__content p {
-    margin-top: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #fff;
+.personalTokens p {
+    font-size: 1.5rem;
+    background-color: #fff;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent; 
 }
-
-.main__btn {
-    font-size: 1rem;
-    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-    padding: 14px 32px;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    margin-top: 2rem;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.35s;
-    outline: none;
-}
-
-.main__btn a {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    text-decoration: none;
-}
-
-.main__btn:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #4837ff;
-    transition: all 0.35s;
-    border-radius: 4px;
-}
-
-.main__btn:hover:after {
-    width: 100%;
-}
-
-.main__img--container {
-    text-align: center;
-}
-
-#main_img {
-    height: 80%;
-    width: 80%;
-}
-
-/* mobile responsive */
-@media screen and (max-width: 760px) {
-    .main__container {
-        display: grid;
-        grid-template-columns: auto;
-        align-items: center;
-        justify-content: center;
-        justify-self: center;
-        width: 100%;
-        margin: 0 auto;
-        height: 90vh;
-    }
-
-    .main__content {
-        text-align: center;
-        margin-bottom: 4rem;
-    }
-
-    .main__content h1 {
-        font-size: 2.5rem;
-        margin-top: 2rem;
-    }
-
-    .main__content h2 {
-        font-size: 3rem;
-    }
-
-    .main__content p {
-        margin-top: 1rem;
-        font-size: 1.5rem;
-    }
-}
-
-@media screem and (max-width: 400px) {
-    .main__content h1 {
-        font-size: 2rem;
-        margin-top: 3rem;
-    }
-
-    .main__content h2 {
-        font-size: 2rem;
-    }
-
-    .main__content p {
-        margin-top: 2rem;
-        font-size: 1.5rem;
-    } 
-
-    .main__btn {
-        padding: 12px 36px;
-        margin: 2.5rem 0;
-    }
-}
-
 
 

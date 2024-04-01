@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juke Box Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
     <script src="https://kit.fontawesome.com/d091106628.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,36 +33,25 @@
         </ul>
     </div>
     </nav>
-    <!-- Hero Section -->
-    <div class="main">
-        <div class="main__container">
-            <div class="main__content">
-                <h1>MR FREISENS</h1>
-                <h2>JUKEBOX</h2>
-                <p>MAKE GOOD REQUESTS</p>
-                <button class="main__btn"><a href="/login.html">LOGIN</a></button>
+    <div class="login">
+    <div class="login__container">
+        <form>
+            <h1>Login</h1>
+            <div class="form__row">
+                <input type="username" id="username__input" class="form__input" placeholder="USERNAME">
+                <label for="username__input" class="form__label">Username</label>
             </div>
-            <div class="main__img--container">
-                <img src="images/circleHeadphone.svg" alt="pic" id="main__img">
+            <div class="form__row">
+                <input type="password" id="pwd__input" class="form__input" placeholder="PASSWORD">
+                <label for="pwd__input" class="form__label">Password</label>
             </div>
-        </div>
-    </div>
-    <!-- services -->
-    <!-- <div class="services">
-        <h1>I love hype</h1>
-        <div class="services__container">
-            <div class="services__card">
-                <h2>Experience Bliss</h2>
-                <p>I love TECH</p>
-                <button>Start that jawn</button>
-            </div>
-            <div class="services__card">
-                <h2>I love aces</h2>
-                <p>Take sum money</p>
-                <button>Start that jawn</button>
-            </div>
-        </div>
-    </div> -->
+            <a href="/tooBad.html" class="forgot__password">Forgot Password?</a>
+
+            <button type="submit" class="submit__btn">Login</button>
+        </form>
+        <p class="sign__up__text">Don't have an account? <a href="/tooBad.html">Sign up</a></p>
     <script src="index.js"></script>
+</div>
+</div>
 </body>
 </html>

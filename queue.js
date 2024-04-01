@@ -1,6 +1,3 @@
-const menu = document.querySelector("#mobile-menu");
-const menuLinks = document.querySelector(".navbar__menu");
-
 let songs = [];
 
 function updateSongs() {
@@ -28,30 +25,26 @@ function updateSongs() {
 }
 
 function addToQueue(songName) {
-  //   var inputElement = document.getElementById("inputElement");
-  //   var songName = inputElement.value;
-
-  var li = document.createElement("li");
-  var h1 = document.createElement("h1");
-  var p = document.createElement("p");
-
-  li.classList.add("queue__item");
-
-  h1.appendChild(document.createTextNode(songName));
-  p.appendChild(document.createTextNode("Artist"));
-
-  li.appendChild(h1);
-  li.appendChild(p);
-
-  songs.push(li);
-
-  updateSongs();
-}
-
-menu.addEventListener("click", function () {
-  menu.classList.toggle("is-active");
-  menuLinks.classList.toggle("active");
-});
+    //   var inputElement = document.getElementById("inputElement");
+    //   var songName = inputElement.value;
+  
+    var li = document.createElement("li");
+    var h1 = document.createElement("h1");
+    var p = document.createElement("p");
+  
+    li.classList.add("queue__item");
+  
+    h1.appendChild(document.createTextNode(songName));
+    p.appendChild(document.createTextNode("Artist"));
+  
+    li.appendChild(h1);
+    li.appendChild(p);
+  
+    songs.push(li);
+  
+    updateSongs();
+  }
+  
 
 document.getElementById("addSongBtn").addEventListener("click", function () {
     let inputField = document.getElementById("songInput");
@@ -75,3 +68,5 @@ document.getElementById("addSongBtn").addEventListener("click", function () {
       }
     });
 });
+
+document.addEventListener("DOMContentLoaded", updateSongs)

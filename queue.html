@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUKEBOX</title>
+    <link rel="stylesheet" href="queue.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="fa-solid fa-music"></i>&nbsp;JUKEBOX</a>
+       
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span> <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/queue.html" class="navbar__links">Queue</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">Token</a>
+            </li>
+            <li class="navbar__btn"><a href = "/" class = "button">Request</a></li>
+        </ul>
+    </div>
+    </nav>
+    <div class="main">
+        <div class="main__container">
+            <div class="personal__info">
+                <div class="personalMessage"><p>Hello Alex,</p> <h1>You have 1 token!</h1></div>
+                <div class="personalTokens"><p>Tokens can be used for either skipping someone elses song or putting your song to the top of the queue. They are replenished daily, use them wisely!</p></div>
+            </div>
+            <div class="queue-container" id = "queue__container">
+                <button id="addSongBtn" class="queue__btn"><p>Add a Song</p></button>
+                <input type="text" id="songInput" placeholder="ENTER SONG NAME HERE" style="display: none;">
+                <ul id="queue"></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="queue.js"></script>
+</body>
+</html>
